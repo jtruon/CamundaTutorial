@@ -152,11 +152,11 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_0213w5g_di" bpmnElement="Event_0213w5g">
-        <dc:Bounds x="1232" y="362" width="36" height="36" />
+        <dc:Bounds x="1132" y="362" width="36" height="36" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_1qzl0t3_di" bpmnElement="Flow_1qzl0t3">
         <di:waypoint x="1046" y="380" />
-        <di:waypoint x="1232" y="380" />
+        <di:waypoint x="1132" y="380" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1u63c8u_di" bpmnElement="Flow_1u63c8u">
         <di:waypoint x="218" y="180" />
