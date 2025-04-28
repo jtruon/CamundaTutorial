@@ -78,10 +78,10 @@
       <bpmn:outgoing>Flow_1j3gfyf</bpmn:outgoing>
     </bpmn:serviceTask>
     <bpmn:subProcess id="Activity_1nntsk6" triggeredByEvent="true">
-      <bpmn:startEvent id="Event_0gsq3ea" name="2h">
+      <bpmn:startEvent id="Event_0gsq3ea" name="3h">
         <bpmn:outgoing>Flow_1qzl0t3</bpmn:outgoing>
         <bpmn:timerEventDefinition id="TimerEventDefinition_0fmrdo3">
-          <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">PT2H</bpmn:timeDuration>
+          <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">PT3H</bpmn:timeDuration>
         </bpmn:timerEventDefinition>
       </bpmn:startEvent>
       <bpmn:endEvent id="Event_0213w5g">
