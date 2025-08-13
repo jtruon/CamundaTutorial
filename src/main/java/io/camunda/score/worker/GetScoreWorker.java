@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.Map;
 
-@Component
+//@Component
 @ConfigurationProperties()
 public class GetScoreWorker {
 

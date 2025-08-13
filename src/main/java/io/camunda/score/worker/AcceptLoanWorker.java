@@ -8,7 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class AcceptLoanWorker {
 
     Logger logger = LoggerFactory.getLogger(AcceptLoanWorker.class.getName());
@@ -27,5 +27,4 @@ public class AcceptLoanWorker {
         client.newCompleteCommand(job.getKey())
                 .send().join();
     }
-
 }
