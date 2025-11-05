@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:zeebe="http://camunda.org/schema/zeebe/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1q4m02f" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Web Modeler" exporterVersion="040cb24" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.6.0">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:zeebe="http://camunda.org/schema/zeebe/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1q4m02f" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Web Modeler" exporterVersion="040cb24" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.8.0">
   <bpmn:process id="LoanApplication" isExecutable="true">
     <bpmn:extensionElements>
-      <zeebe:versionTag value="2.0" />
+      <zeebe:versionTag value="1.0" />
     </bpmn:extensionElements>
     <bpmn:startEvent id="Start_ApplicationLoan">
       <bpmn:outgoing>Flow_1u63c8u</bpmn:outgoing>
@@ -104,8 +104,20 @@
           <dc:Bounds x="419" y="125" width="63" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0r7jjag_di" bpmnElement="LoanAccepted">
+        <dc:Bounds x="932" y="162" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="929" y="205" width="45" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Gateway_0dh9fik_di" bpmnElement="Gateway_0dh9fik" isMarkerVisible="true">
         <dc:Bounds x="685" y="245" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_00b63ln_di" bpmnElement="LoanRejected">
+        <dc:Bounds x="932" y="372" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="931" y="415" width="40" height="14" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0xepy3j_di" bpmnElement="GetScore">
         <dc:Bounds x="270" y="140" width="100" height="80" />
@@ -132,18 +144,6 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_06dmblc_di" bpmnElement="RejectLoan">
         <dc:Bounds x="740" y="350" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_0r7jjag_di" bpmnElement="LoanAccepted">
-        <dc:Bounds x="932" y="162" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="929" y="205" width="45" height="14" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_00b63ln_di" bpmnElement="LoanRejected">
-        <dc:Bounds x="932" y="372" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="931" y="415" width="40" height="14" />
-        </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0lowv1n_di" bpmnElement="Activity_1nntsk6" isExpanded="true">
         <dc:Bounds x="1070" y="280" width="350" height="200" />
