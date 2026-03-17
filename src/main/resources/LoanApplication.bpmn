@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:zeebe="http://camunda.org/schema/zeebe/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1q4m02f" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Web Modeler" exporterVersion="9b0b274" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.8.0">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:zeebe="http://camunda.org/schema/zeebe/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1q4m02f" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Web Modeler" exporterVersion="34b0162" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.8.0">
   <bpmn:process id="LoanApplication" isExecutable="true">
     <bpmn:extensionElements>
       <zeebe:versionTag value="1.0" />
@@ -19,9 +19,9 @@
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=score &gt; 800</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:endEvent id="LoanAccepted" name="accepted">
-      <bpmn:incoming>Flow_0fikvcg</bpmn:incoming>
+      <bpmn:incoming>Flow_1mylpki</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:sequenceFlow id="Flow_0fikvcg" sourceRef="AcceptLoan" targetRef="LoanAccepted" />
+    <bpmn:sequenceFlow id="Flow_0fikvcg" sourceRef="AcceptLoan" targetRef="Activity_01xrrrx" />
     <bpmn:sequenceFlow id="Flow_CheckUser" name="else" sourceRef="GatewayCheckLoanAcceptance" targetRef="CheckManualLoan" />
     <bpmn:exclusiveGateway id="Gateway_0dh9fik" default="Flow_1fraqa2">
       <bpmn:incoming>Flow_1yjboy3</bpmn:incoming>
@@ -92,6 +92,11 @@
       </bpmn:endEvent>
       <bpmn:sequenceFlow id="Flow_1qzl0t3" sourceRef="Event_0gsq3ea" targetRef="Event_0213w5g" />
     </bpmn:subProcess>
+    <bpmn:task id="Activity_01xrrrx" name="Verify account">
+      <bpmn:incoming>Flow_0fikvcg</bpmn:incoming>
+      <bpmn:outgoing>Flow_1mylpki</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_1mylpki" sourceRef="Activity_01xrrrx" targetRef="LoanAccepted" />
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="LoanApplication">
@@ -102,12 +107,6 @@
         <dc:Bounds x="425" y="155" width="50" height="50" />
         <bpmndi:BPMNLabel>
           <dc:Bounds x="419" y="125" width="63" height="14" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_0r7jjag_di" bpmnElement="LoanAccepted">
-        <dc:Bounds x="932" y="162" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="929" y="205" width="45" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Gateway_0dh9fik_di" bpmnElement="Gateway_0dh9fik" isMarkerVisible="true">
@@ -145,6 +144,16 @@
       <bpmndi:BPMNShape id="Activity_06dmblc_di" bpmnElement="RejectLoan">
         <dc:Bounds x="740" y="350" width="100" height="80" />
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0r7jjag_di" bpmnElement="LoanAccepted">
+        <dc:Bounds x="1052" y="162" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1049" y="205" width="45" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_01xrrrx_di" bpmnElement="Activity_01xrrrx">
+        <dc:Bounds x="880" y="140" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0lowv1n_di" bpmnElement="Activity_1nntsk6" isExpanded="true">
         <dc:Bounds x="1070" y="280" width="350" height="200" />
       </bpmndi:BPMNShape>
@@ -178,7 +187,7 @@
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0fikvcg_di" bpmnElement="Flow_0fikvcg">
         <di:waypoint x="840" y="180" />
-        <di:waypoint x="932" y="180" />
+        <di:waypoint x="880" y="180" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0oycymj_di" bpmnElement="Flow_CheckUser">
         <di:waypoint x="458" y="197" />
@@ -221,6 +230,10 @@
         <di:waypoint x="710" y="295" />
         <di:waypoint x="710" y="360" />
         <di:waypoint x="740" y="360" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1mylpki_di" bpmnElement="Flow_1mylpki">
+        <di:waypoint x="980" y="180" />
+        <di:waypoint x="1052" y="180" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
