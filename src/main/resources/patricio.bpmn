@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Web Modeler" exporterVersion="0e2f930" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.8.0">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Web Modeler" exporterVersion="34b0162" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.8.0">
   <bpmn:process id="Process_1883oqx" name="patricio" isExecutable="true">
     <bpmn:startEvent id="StartEvent_1">
       <bpmn:outgoing>Flow_1ovnem6</bpmn:outgoing>
@@ -11,13 +11,18 @@
     <bpmn:sequenceFlow id="Flow_1ovnem6" sourceRef="StartEvent_1" targetRef="Activity_0bpn5ie" />
     <bpmn:sequenceFlow id="Flow_0he4hul" sourceRef="Activity_0bpn5ie" targetRef="Activity_1w27oku" />
     <bpmn:endEvent id="Event_0m3houp">
-      <bpmn:incoming>Flow_1560sp4</bpmn:incoming>
+      <bpmn:incoming>Flow_19ofgmv</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:sequenceFlow id="Flow_1560sp4" sourceRef="Activity_1w27oku" targetRef="Event_0m3houp" />
+    <bpmn:sequenceFlow id="Flow_1560sp4" sourceRef="Activity_1w27oku" targetRef="Activity_0uec6bd" />
     <bpmn:serviceTask id="Activity_1w27oku">
       <bpmn:incoming>Flow_0he4hul</bpmn:incoming>
       <bpmn:outgoing>Flow_1560sp4</bpmn:outgoing>
     </bpmn:serviceTask>
+    <bpmn:task id="Activity_0uec6bd">
+      <bpmn:incoming>Flow_1560sp4</bpmn:incoming>
+      <bpmn:outgoing>Flow_19ofgmv</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_19ofgmv" sourceRef="Activity_0uec6bd" targetRef="Event_0m3houp" />
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1883oqx">
@@ -27,11 +32,14 @@
       <bpmndi:BPMNShape id="Activity_0bpn5ie_di" bpmnElement="Activity_0bpn5ie">
         <dc:Bounds x="240" y="78" width="100" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_0m3houp_di" bpmnElement="Event_0m3houp">
-        <dc:Bounds x="562" y="100" width="36" height="36" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_1p57dhe_di" bpmnElement="Activity_1w27oku">
         <dc:Bounds x="400" y="78" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0m3houp_di" bpmnElement="Event_0m3houp">
+        <dc:Bounds x="692" y="100" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0uec6bd_di" bpmnElement="Activity_0uec6bd">
+        <dc:Bounds x="550" y="78" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_1ovnem6_di" bpmnElement="Flow_1ovnem6">
         <di:waypoint x="186" y="118" />
@@ -43,7 +51,11 @@
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1560sp4_di" bpmnElement="Flow_1560sp4">
         <di:waypoint x="500" y="118" />
-        <di:waypoint x="562" y="118" />
+        <di:waypoint x="550" y="118" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_19ofgmv_di" bpmnElement="Flow_19ofgmv">
+        <di:waypoint x="650" y="118" />
+        <di:waypoint x="692" y="118" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
